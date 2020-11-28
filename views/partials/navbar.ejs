@@ -1,0 +1,31 @@
+<nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand " href="/">
+        <img src="/img/fatec.png" alt="Imagem da Fatec">
+    </a>
+
+    <div class="row">
+
+        <div style="display: flex;">
+            <a style="color: white; padding: 20px;" href="/admin/categories">Categorias</a>
+        </div>
+        <div style="display: flex;">
+            <a style="color: white; margin-right: 40px; margin-top: 20px;" href="/admin/articles">Artigos</a>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <% categories.forEach(category => { %>
+        <div style="display: flex;">
+            <a style="color: white; padding: 20px;" href="/category/<%= category.slug %>"><%= category.title %></a>
+        </div>
+        <% }) %>
+    </div>
+
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+        </li>
+    </ul>
+
+</nav>
